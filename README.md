@@ -1,2 +1,2 @@
-# Graph-Traversal-DFS-BFS
+# Week10-Graph-Traversal-DFS-BFS
 DFS and BFS traversal of graphs.
