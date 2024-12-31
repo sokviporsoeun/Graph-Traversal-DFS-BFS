@@ -12,7 +12,7 @@ using namespace std;
 class Graph {
 private:
     int V;  
-    std::vector<std::list<int>> adj; 
+    vector<std::list<int>> adj; 
 
 public:
     
@@ -24,27 +24,27 @@ public:
     }
 
     void Display() {
-        std::cout << "Graph Structure (Adjacency List):" << std::endl;
+        cout << "Graph Structure (Adjacency List):" << std::endl;
         for (int i = 0; i < V; ++i) {
-            std::cout << i << ": ";
+            cout << i << ": ";
             for (int neighbor : adj[i]) {
-                std::cout << neighbor << " ";
+                cout << neighbor << " ";
             }
-            std::cout << std::endl;
+            cout << endl;
         }
     }
 
     void DFS(int s) {
-        std::vector<bool> visited(V, false);
-        std::stack<int> stack;
+        vector<bool> visited(V, false);
+        stack<int> stack;
         stack.push(s);
         visited[s] = true;
 
-        std::cout << "Depth-First Search (DFS) starting from vertex 0: ";
+        cout << "Depth-First Search (DFS) starting from vertex 0: ";
         while (!stack.empty()) {
             int u = stack.top();
             stack.pop();
-            std::cout << u << " ";
+            cout << u << " ";
 
             for (auto it = adj[u].rbegin(); it != adj[u].rend(); ++it) {  // Iterate in reverse order for consistent output
                 if (!visited[*it]) {
@@ -53,20 +53,20 @@ public:
                 }
             }
         }
-        std::cout << std::endl;
+        cout << endl;
     }
 
     void BFS(int s) {
-        std::vector<bool> visited(V, false);
-        std::queue<int> queue;
+        vector<bool> visited(V, false);
+        queue<int> queue;
         queue.push(s);
         visited[s] = true;
 
-        std::cout << "Breadth-First Search (BFS) starting from vertex 0: ";
+        cout << "Breadth-First Search (BFS) starting from vertex 0: ";
         while (!queue.empty()) {
             int u = queue.front();
             queue.pop();
-            std::cout << u << " ";
+            cout << u << " ";
 
             for (int v : adj[u]) {
                 if (!visited[v]) {
@@ -75,7 +75,7 @@ public:
                 }
             }
         }
-        std::cout << std::endl;
+        cout << endl;
     }
 };
 
