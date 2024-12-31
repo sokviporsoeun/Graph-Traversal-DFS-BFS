@@ -12,7 +12,7 @@ using namespace std;
 class Graph {
 private:
     int V;  
-    vector<std::list<int>> adj; 
+    vector<list<int>> adj; 
 
 public:
     
@@ -46,7 +46,7 @@ public:
             stack.pop();
             cout << u << " ";
 
-            for (auto it = adj[u].rbegin(); it != adj[u].rend(); ++it) {  // Iterate in reverse order for consistent output
+            for (auto it = adj[u].rbegin(); it != adj[u].rend(); ++it) {  
                 if (!visited[*it]) {
                     visited[*it] = true;
                     stack.push(*it);
